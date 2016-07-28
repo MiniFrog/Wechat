@@ -1,0 +1,25 @@
+1.access_token 7200s内有效，调用服务唯一的凭证，get方式获得
+https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+grant_type 必须填写 client_credential
+appid 和 secret 来自公众号
+成功时 返回json 
+{"access_token":"ACCESS_TOKEN","expires_in":7200}
+expires_in 凭证有效时间
+失败时 返回json
+{"errcode":40013,"errmsg":"invalid appid"}
+具体的错误码需要查看文档
+
+2.服务器ip地址 get方式获得
+https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=ACCESS_TOKEN
+成功时 返回json
+{
+    "ip_list": [
+        "127.0.0.1", 
+        "127.0.0.2", 
+        "101.226.103.0/25"
+    ]
+}
+ip_list 微信服务器ip地址列表
+失败时 返回json
+{"errcode":40013,"errmsg":"invalid appid"}
+具体的错误码需要查询文档 
