@@ -13,6 +13,11 @@ interface InterfaceClient
 	public $message;
 	//存放收到的信息
 
-    public function initWechat();
+	public $message_type;
+	//存放信息类型
+
+    private function initWechat();
     //对程序进行初始化
+
+    protected function messageError();
 }

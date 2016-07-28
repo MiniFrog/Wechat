@@ -9,10 +9,16 @@ class Client implements InterfaceClient
     
 	public $message;
 
+    public $message_type;
+
     public function __construct () 
     {
         $this->initWechat();
-        $message = new Message();
+        if( !$this->message_type = new GetMessageType() )
+        {
+            messageError();
+        }
+        $this->message = new FactoryMessage( $this->message_type );
         new HandleMessage( $this );
     }
 
@@ -20,4 +26,11 @@ class Client implements InterfaceClient
     {
        new AutoLoadWechat();
     }
+
+    protected function messageError()
+    {
+        echo "";
+        exit;
+    }
+
 }
