@@ -4,9 +4,23 @@ include "../Interface/InterfaceFactoryMessage.php"
 
 class FactoryMessage implements InterfaceFactoryMessage
 {
-	public function doFactory( $message_type )
+	public function __construct( InterfaceMessageType $messageType )
 	{
-		$post_obj = simplexml_load_string($GLOBALS['HTTP_RAW_POST_DATA'], 'SimpleXMLElement', LIBXML_NOCDATA);
-		return new ucwords( $message_type ).'Message';
+		if( $messageType->getMessageType() == NULL )
+		{
+			return false;
+		} else {
+			return $this->doFactory( $messageType );
+		}
+	}
+
+	protected function doFactory( InterfaceMessageType $messageType )
+	{
+		$message_type = $messageType->getMessageType();
+		if( strstr( $message_type, 'Event' ) ){
+			return new 'EventMessage' . substr( $message_type, 5 );
+		} else {
+			return new 'CommonMessage' . $message_type;
+		}
 	}
 }

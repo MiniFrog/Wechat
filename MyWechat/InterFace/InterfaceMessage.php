@@ -2,20 +2,26 @@
 
 abstract class InterfaceMessage
 {
-	public $from_user_name;
+	protected $post_obj;
 
-	public $to_user_name;
-
-	public $create_time;
-
-	protected function getCommonMessage( $post_obj )
+	public function __construct( $post_obj ) 
 	{
-		$this->$from_user_name = $post_obj->FromUserName;
-		$this->$to_user_name = $post_obj->ToUserName;
-		$this->create_time = $post_obj->CreateTime;
+		$this->post_obj = $post_obj;
+		return $this;
 	}
-	//将 post_obj 中的基本内容注入到 $client 的 $message 中
 
-	abstract protected function getSpecialMessage( $post_obj );
-	//根据 MsgType 的类型处理不同的消息种类
+	public function getFromUserName()
+	{
+		return $this->post_obj->FromUserName;
+	}
+
+	public function getToUserName()
+	{
+		return $this->post_obj->ToUserName;
+	}
+
+	public function getCreateTime()
+	{
+		return $this->post_obj->CreateTime;
+	}
 }

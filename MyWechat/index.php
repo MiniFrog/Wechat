@@ -1,6 +1,6 @@
 <?php
 
-if( isset( $_GET['Admin']) && $_GET['admin'] == true)
+if( isset( $_GET['Admin']) && $_GET['admin'] == true )
 {
 	include "./class/Admin.php";
 	$admin = new Admin();

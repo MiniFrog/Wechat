@@ -2,24 +2,19 @@
 
 include "AutoLoad.php"
 
-include "../Interface/InterfaceClient.php"
-
 class Client implements InterfaceClient
 {
     
-	public $message;
-
-    public $message_type;
+	protected $message;
 
     public function __construct () 
     {
         $this->initWechat();
-        if( !$this->message_type = new GetMessageType() )
+        if( $this->message = new FactoryMessage( new messageType() ) )
         {
-            messageError();
+            $this->messageError();
         }
-        $this->message = new FactoryMessage( $this->message_type );
-        new HandleMessage( $this );
+        new HandleMessage( $this->message );
     }
 
     private function initWechat () 
