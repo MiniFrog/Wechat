@@ -1,6 +1,6 @@
 <?php
 
-include 'InterfaceMessage.php'
+include 'InterfaceMessage.php';
 
 abstract class InterfaceCommonMessage extends InterfaceMessage
 {

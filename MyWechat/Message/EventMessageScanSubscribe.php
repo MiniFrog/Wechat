@@ -1,8 +1,10 @@
 <?php
 
-include '../Interface/InterfaceEventMessage.php'
+namespace Message;
 
-class EventMessageScanSubscribe extends InterfaceEventMessage
+include '../Interface/InterfaceEventMessage.php';
+
+class EventMessageScanSubscribe extends \InterfaceEventMessage
 {
 	const event_type = 'ScanSubscribe';
 

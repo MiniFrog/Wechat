@@ -1,8 +1,10 @@
 <?php
 
-include "../InterFace/InterfaceCommonMessage.php"
+namespace Message;
 
-class CommonMessageShortVideo extends InterfaceCommonMessage 
+include "../InterFace/InterfaceCommonMessage.php";
+
+class CommonMessageShortVideo extends \InterfaceCommonMessage 
 {
 	const message_type = 'ShortVideo';
 

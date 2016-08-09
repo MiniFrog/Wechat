@@ -1,8 +1,10 @@
 <?php
 
-include "../InterFace/InterfaceCommonMessage.php"
+namespace Message;
 
-class CommonMessageImage extends InterfaceCommonMessage
+include "../InterFace/InterfaceCommonMessage.php";
+
+class CommonMessageImage extends \InterfaceCommonMessage
 {
 	const message_type = 'Image';
 

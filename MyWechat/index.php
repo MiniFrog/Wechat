@@ -2,16 +2,16 @@
 
 if( isset( $_GET['Admin']) && $_GET['admin'] == true )
 {
-	include "./class/Admin.php";
-	$admin = new Admin();
+	include "/System/Admin.php";
+	$admin = new System\Admin();
 }
 
 if ( isset( $_GET['echostr'] ) )
 {
     echo $_GET['echostr'];
 } else {
-	include "./Class/Client.php";
-	$client = new Client();
+	include "/System/Client.php";
+	$client = new System\Client();
 }
 
 

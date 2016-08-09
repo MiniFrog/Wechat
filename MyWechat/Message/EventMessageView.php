@@ -1,8 +1,10 @@
 <?php
 
+namespace Message;
+
 include '../Interface/InterfaceEventMessage.php';
 
-class EventMessageView extends InterfaceEventMessage
+class EventMessageView extends \InterfaceEventMessage
 {
 	const event_type = 'View';
 

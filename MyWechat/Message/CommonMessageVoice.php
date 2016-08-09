@@ -1,8 +1,10 @@
 <?php
 
-include "../InterFace/InterfaceCommonMessage.php"
+namespace Message;
 
-class CommonMessageVoice extends InterfaceCommonMessage
+include "../InterFace/InterfaceCommonMessage.php";
+
+class CommonMessageVoice extends \InterfaceCommonMessage
 {
 	const message_type = 'Voice';
 

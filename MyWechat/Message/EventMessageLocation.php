@@ -1,8 +1,10 @@
 <?php
 
-include '../Interface/InterfaceEventMessage.php'
+namespace Message;
 
-class EventMessageLocation extends InterfaceEventMessage
+include '../Interface/InterfaceEventMessage.php';
+
+class EventMessageLocation extends \InterfaceEventMessage
 {
 	const event_type = 'Location';
 
@@ -11,12 +13,12 @@ class EventMessageLocation extends InterfaceEventMessage
 		return $this->post_obj->Latitude;
 	}
 
-	public function getLongitude
+	public function getLongitude()
 	{
 		return $this->post_obj->Longitude;
 	}
 
-	public function getPrecision
+	public function getPrecision()
 	{
 		return $this->post_obj->getPrecision;
 	}

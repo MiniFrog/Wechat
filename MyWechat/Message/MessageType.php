@@ -1,14 +1,14 @@
 <?php
+namespace Message;
 
-include '../Interface/InterfaceMessageType.php'
-
-class MessageType implements InterfaceMessageType
+class MessageType implements \InterfaceMessageType
 {
 	protected $message_type_str;
 
 	public function __construct()
 	{
-		if( $post_obj = $this->checkMessage() )
+	    $post_obj = $this->checkMessage();
+		if( $post_obj != false )
 		{
 			if( $post_obj->MsgType == 'event' )
 			{
@@ -41,3 +41,5 @@ class MessageType implements InterfaceMessageType
 		return $this->message_type_str;
 	}
 }
+
+
